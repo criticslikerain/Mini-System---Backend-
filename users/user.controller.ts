@@ -1,16 +1,16 @@
 import { Router } from "express";
-import { BookService } from "./book.service";
+import { UserService } from "./user.service";
 
 const router = Router();
-const bookService = new BookService();
+const userService = new UserService();
 
 router.post("/", async (req, res) => {
   try {
-    const { book_name, book_author, book_category } = req.body;
-    const newBook = await bookService.addBook(book_name, book_author, book_category);
-    res.status(201).json(newBook);
+    const { name, lastname, email, password } = req.body;
+    const newUser = await userService.createUser(name, lastname, email, password);
+    res.status(201).json(newUser);
   } catch (error) {
-    res.status(500).json({ message: "Error adding book" });
+    res.status(500).json({ message: "Error creating user" });
   }
 });
 

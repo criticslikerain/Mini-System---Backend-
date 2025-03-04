@@ -1,4 +1,4 @@
-import { AppDataSource } from "../_helper/db";
+import { AppDataSource } from "../_helpers/db";
 import { User } from "./user.entity";
 import bcrypt from "bcrypt";
 

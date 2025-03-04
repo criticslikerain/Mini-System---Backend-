@@ -1,16 +1,19 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()
-export class Book {
+export class User {
   @PrimaryGeneratedColumn()
-  book_id: number;
+  id_no: number;
+
+  @Column({ type: "varchar", length: 255 })  
+  name: string;
 
   @Column({ type: "varchar", length: 255 })
-  book_name: string;
+  lastname: string;
+
+  @Column({ type: "varchar", unique: true, length: 255 })
+  email: string;
 
   @Column({ type: "varchar", length: 255 })
-  book_author: string;
-
-  @Column({ type: "varchar", length: 255 })
-  book_category: string;
+  password: string;
 }
