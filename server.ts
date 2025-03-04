@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
-import { AppDataSource } from "../src/_helper/db";
+import { AppDataSource } from "./_helpers/db";
 import userRoutes from "./users/user.controller";
 
 dotenv.config();
